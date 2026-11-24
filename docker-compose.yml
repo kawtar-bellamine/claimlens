@@ -1,0 +1,13 @@
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "ClaimLens!2027"
+    ports: ["1433:1433"]
+  ollama:
+    image: ollama/ollama:latest
+    ports: ["11434:11434"]
+    volumes: ["ollama:/root/.ollama"]
+volumes:
+  ollama:
